@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="border" prefHeight="556.0" prefWidth="666.0" style="-fx-background-color: #ffffff;" styleClass="body" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pams.view.SaleController">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="666.0" spacing="10.0" style="-fx-background-color: #2b89e0;">
+               <children>
+                  <JFXButton fx:id="btnBack" contentDisplay="GRAPHIC_ONLY" onAction="#goBack">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="30" />
+                     </graphic>
+                  </JFXButton>
+                  <Separator orientation="VERTICAL" prefHeight="33.0" prefWidth="3.0" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="POS (point of sale)">
+                     <font>
+                        <Font name="Century Gothic Bold" size="17.0" />
+                     </font>
+                  </Text>
+               </children>
+               <effect>
+                  <Reflection />
+               </effect>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="445.0" prefWidth="389.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="55.0" prefWidth="267.0" style="-fx-background-color: #2F4E7F;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <JFXTextField fx:id="hint" focusColor="WHITE" labelFloat="true" layoutX="22.0" layoutY="24.0" maxWidth="268.0" minWidth="268.0" prefHeight="43.0" prefWidth="268.0" promptText="Item search hint" styleClass="textfield1" unFocusColor="WHITE" />
+               </children>
+            </AnchorPane>
+            <TableView fx:id="Itableview" prefHeight="261.0" prefWidth="389.0" tableMenuButtonVisible="true">
+               <columns>
+                  <TableColumn fx:id="itmID" prefWidth="75.0" text="Id" />
+                  <TableColumn fx:id="itmNam" prefWidth="75.0" text="Item Name" />
+                  <TableColumn fx:id="genNam" prefWidth="75.0" text="Generic name" />
+                  <TableColumn fx:id="itmPric" prefWidth="75.0" text="Price" />
+                  <TableColumn fx:id="itmQty" prefWidth="75.0" text="Availability" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </TableView>
+            <AnchorPane prefHeight="140.0" prefWidth="389.0" style="-fx-background-color: #2F4E7F;">
+               <children>
+                  <Label layoutX="13.0" layoutY="4.0" text="Current balance:" textFill="#13d0aa">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbCur" layoutX="122.0" layoutY="4.0" text="100000" textFill="#13d0aa">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="quantity" focusColor="WHITE" labelFloat="true" layoutY="26.0" maxWidth="98.0" minWidth="66.0" onAction="#prodQuant" prefHeight="43.0" prefWidth="98.0" promptText="Qty" styleClass="textfield1" unFocusColor="WHITE" />
+                  <Label layoutX="103.0" layoutY="39.0" text="New Balance:" textFill="#9fcf15">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbNwS" layoutX="190.0" layoutY="40.0" textFill="#9fcf15">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="wholS" layoutX="140.0" layoutY="67.0" mnemonicParsing="false" text="Wholesale" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="saletype" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="retS" layoutX="10.0" layoutY="68.0" mnemonicParsing="false" text="Retail" textFill="WHITE" toggleGroup="$saletype">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </RadioButton>
+                  <JFXTextField fx:id="amoun" focusColor="WHITE" labelFloat="true" layoutX="24.0" layoutY="109.0" maxWidth="145.0" minWidth="66.0" onAction="#issuePrice" prefHeight="43.0" prefWidth="145.0" promptText="Price(optional)" styleClass="textfield1" unFocusColor="WHITE" />
+                  <Label layoutX="198.0" layoutY="121.0" text="sub total:" textFill="#cfb217">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbSubT" layoutX="277.0" layoutY="122.0" textFill="#cfb217">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <JFXButton fx:id="btnAdd" onAction="#AddItem" prefHeight="42.0" prefWidth="389.0" style="-fx-background-color: #16669B;" text="Add to cart" textFill="#f8f0f0">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#ebe5e5" glyphName="CART_ARROW_DOWN" size="20" wrappingWidth="29.571428298950195" />
+               </graphic>
+            </JFXButton>
+         </children>
+         <BorderPane.margin>
+            <Insets right="10.0" top="10.0" />
+         </BorderPane.margin></VBox>
+   </left>
+   <right>
+      <VBox prefHeight="455.0" prefWidth="12.0" BorderPane.alignment="CENTER" />
+   </right>
+   <center>
+      <StackPane fx:id="pane" prefHeight="425.0" prefWidth="597.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <center>
+                  <VBox BorderPane.alignment="CENTER">
+                     <children>
+                        <TableView fx:id="tableview" prefHeight="459.0" prefWidth="492.0" tableMenuButtonVisible="true">
+                          <columns>
+                            <TableColumn fx:id="idCol" prefWidth="75.0" text="Id" />
+                              <TableColumn fx:id="prodnamecol" prefWidth="75.0" text="Item Name" />
+                              <TableColumn fx:id="categorycol" prefWidth="75.0" text="Category" />
+                              <TableColumn fx:id="pricecol" prefWidth="75.0" text="Price" />
+                              <TableColumn fx:id="qtycol" prefWidth="75.0" text="Qty issued" />
+                              <TableColumn fx:id="amountcol" prefWidth="75.0" text="Amount" />
+                              <TableColumn fx:id="actioncol" prefWidth="75.0" text="Action" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </TableView>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="681.0" spacing="30.0" style="-fx-background-color: #ffffff;">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                           <children>
+                              <Text fill="#1f168d" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Text>
+                              <FontAwesomeIconView fill="#2e1e82" glyphName="MONEY" size="35" wrappingWidth="22.0" />
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label fx:id="totallabel" prefHeight="39.0" text="0" textFill="#1a1390">
+                                       <font>
+                                          <Font name="Elephant Italic" size="29.0" />
+                                       </font>
+                                    </Label>
+                                    <Text fill="#0f1b6f" strokeType="OUTSIDE" strokeWidth="0.0" text="/=">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </center>
+            </BorderPane>
+         </children>
+      </StackPane>
+   </center>
+   <bottom>
+      <VBox prefHeight="48.0" prefWidth="666.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="10.0" prefWidth="666.0" />
+            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="666.0" spacing="30.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <FontAwesomeIconView fill="#0a7560" glyphName="CALENDAR" size="18" />
+                  <RadioButton fx:id="recYes" mnemonicParsing="false" text="receipt" textFill="#10108d">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="receipt" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="recNo" layoutX="146.0" layoutY="15.0" mnemonicParsing="false" text="no receipt" textFill="#10108d" toggleGroup="$receipt">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="recInv" layoutX="199.0" layoutY="15.0" mnemonicParsing="false" text="invoice" textFill="#10108d" toggleGroup="$receipt">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="recProf" layoutX="247.0" layoutY="15.0" mnemonicParsing="false" text="proforma(quotation)" textFill="#10108d" toggleGroup="$receipt">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </RadioButton>
+                  <JFXButton fx:id="btnsave" buttonType="RAISED" layoutX="449.0" layoutY="14.0" onAction="#showDialog" prefHeight="29.0" ripplerFill="#175668" styleClass="bar" text="sale out" textFill="#1a8c50">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#831e3e" glyphName="SHOPPING_BAG" size="18" wrappingWidth="22.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btnProfom" buttonType="RAISED" layoutX="190.0" layoutY="14.0" onAction="#showProform" prefHeight="29.0" ripplerFill="#175668" styleClass="bar" text="generate proforma" textFill="#cd17ca">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#bf23bd" glyphName="MAGIC" size="18" wrappingWidth="22.0" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="13.0" prefWidth="666.0" />
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>

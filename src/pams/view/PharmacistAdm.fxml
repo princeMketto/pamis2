@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="556.0" prefWidth="666.0" styleClass="body" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pams.view.PharmacistAdmController">
+   <top>
+      <FlowPane prefHeight="40.0" prefWidth="666.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="backbtn" onAction="#goBack" ripplerFill="#214473" style="-fx-background-color: #30c8ba;" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="11.0" />
+            <Label prefHeight="43.0" prefWidth="143.0" text="Pharmacist/users">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </FlowPane>
+   </top>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <HBox alignment="CENTER" prefHeight="57.0" prefWidth="666.0" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXTextField fx:id="searchUser" focusColor="#217275" labelFloat="true" maxWidth="246.0" minWidth="246.0" prefHeight="31.0" prefWidth="246.0" promptText="Search pharmacist / user here" unFocusColor="#238668">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton fx:id="addUserbtn" buttonType="RAISED" onAction="#addUser" prefHeight="29.0" prefWidth="197.0" ripplerFill="#104b57" style="-fx-background-color: #30c8ba;" text="Add Pharmacist" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <TableView fx:id="tableuser" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="userId" prefWidth="75.0" text="Id" />
+                <TableColumn fx:id="fname" prefWidth="75.0" text="First Name" />
+                  <TableColumn fx:id="lname" prefWidth="75.0" text="Last Name" />
+                  <TableColumn fx:id="uname" prefWidth="75.0" text="User name" />
+                  <TableColumn fx:id="sex" prefWidth="75.0" text="Sex" />
+                  <TableColumn fx:id="phone" prefWidth="75.0" text="Phone" />
+                  <TableColumn fx:id="mail" prefWidth="75.0" text="Email" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </TableView>
+         </center>
+         <left>
+            <VBox prefHeight="456.0" prefWidth="44.0" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <VBox prefHeight="456.0" prefWidth="64.0" BorderPane.alignment="CENTER" />
+         </right>
+         <bottom>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </center>
+   <bottom>
+      <HBox prefHeight="35.0" prefWidth="666.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <effect>
+      <InnerShadow />
+   </effect>
+</BorderPane>

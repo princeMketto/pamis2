@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="pane" prefHeight="306.0" prefWidth="533.0" style="-fx-background-color: #2b89e0;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pams.view.OrderMail">
+   <children>
+      <JFXTextField fx:id="from" focusColor="WHITE" labelFloat="true" layoutX="316.0" layoutY="36.0" maxWidth="217.0" minWidth="217.0" prefHeight="31.0" prefWidth="217.0" promptText="from" styleClass="textfield1" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXTextField>
+      <Text fill="#f2e8e8" layoutX="50.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="pamis Messenger">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="btnSend" layoutX="347.0" layoutY="259.0" onAction="#sendOrder" style="-fx-background-color: #F39C12;" styleClass="btnround" text="send order" textFill="#e2ebdd">
+         <graphic>
+            <FontAwesomeIconView fill="#c90a0a" glyphName="SEND" size="20" wrappingWidth="31.0" />
+         </graphic>
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <FontAwesomeIconView fill="#e4d5d5" glyphName="ENVELOPE" layoutX="14.0" layoutY="33.0" size="25" />
+      <JFXTextField fx:id="to" focusColor="WHITE" labelFloat="true" layoutX="313.0" layoutY="94.0" maxWidth="217.0" minWidth="217.0" prefHeight="31.0" prefWidth="217.0" promptText="to" styleClass="textfield1" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="subject" focusColor="WHITE" labelFloat="true" layoutX="313.0" layoutY="177.0" maxWidth="217.0" minWidth="217.0" prefHeight="31.0" prefWidth="217.0" promptText="subject" styleClass="textfield1" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXTextField>
+      <Label fx:id="labfile" layoutX="325.0" layoutY="226.0" text="154545464" textFill="#ebe2e2">
+         <font>
+            <Font name="Bell MT Bold" size="15.0" />
+         </font>
+      </Label>
+      <Text fill="#f5d6d6" layoutX="14.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="did you want to send SMS notification to vendor?">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <RadioButton fx:id="yes" layoutX="78.0" layoutY="161.0" mnemonicParsing="false" text="YES" textFill="#e8dddd">
+         <font>
+            <Font name="Bell MT Bold" size="14.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="sms" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="no" layoutX="186.0" layoutY="161.0" mnemonicParsing="false" text="NO" textFill="#e8dddd" toggleGroup="$sms">
+         <font>
+            <Font name="Bell MT Bold" size="14.0" />
+         </font>
+      </RadioButton>
+      <JFXTextArea fx:id="text" focusColor="WHITE" labelFloat="true" layoutX="16.0" layoutY="252.0" maxWidth="267.0" minWidth="175.0" prefHeight="37.0" prefWidth="267.0" promptText="enter text here" unFocusColor="WHITE" />
+      <Text fill="#f8f1f1" layoutX="15.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Send to:" underline="true">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Text>
+      <RadioButton fx:id="single" layoutX="21.0" layoutY="69.0" mnemonicParsing="false" text="single " textFill="#e8dddd">
+         <font>
+            <Font name="Bell MT Bold" size="14.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="mode" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="multiple" layoutX="111.0" layoutY="69.0" mnemonicParsing="false" text="multiple" textFill="#e8dddd" toggleGroup="$mode">
+         <font>
+            <Font name="Bell MT Bold" size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="all" layoutX="221.0" layoutY="70.0" mnemonicParsing="false" text="All" textFill="#e8dddd" toggleGroup="$mode">
+         <font>
+            <Font name="Bell MT Bold" size="14.0" />
+         </font>
+      </RadioButton>
+      <Separator layoutX="302.0" layoutY="39.0" orientation="VERTICAL" prefHeight="245.0" prefWidth="5.0" />
+      <JFXComboBox fx:id="vendor" layoutX="11.0" layoutY="95.0" prefHeight="31.0" prefWidth="267.0" styleClass="textfield1" stylesheets="@styles.css" />
+      <JFXTextField fx:id="phone" focusColor="WHITE" labelFloat="true" layoutX="19.0" layoutY="196.0" maxWidth="217.0" minWidth="217.0" prefHeight="31.0" prefWidth="217.0" promptText="vendor phone" styleClass="textfield1" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXTextField>
+      <Label fx:id="status" layoutX="13.0" layoutY="290.0" textFill="WHITE" />
+   </children>
+</AnchorPane>

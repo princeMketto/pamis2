@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="610.0" prefWidth="200.0" styleClass="drawer" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="178.0" fitWidth="199.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/pamis0.png" />
+         </image>
+      </ImageView>
+      <JFXButton accessibleText="Material_two" layoutX="12.0" layoutY="123.0" prefHeight="81.0" prefWidth="200.0" ripplerFill="#1a4d41" styleClass="buttondrawer" stylesheets="@styles.css" text="Product" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="15.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="#e4dddd" glyphName="INDUSTRY" size="20" wrappingWidth="84.0" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="drawSale" accessibleText="Material_one" prefHeight="77.0" prefWidth="190.0" ripplerFill="#1a4d41" styleClass="buttondrawer" stylesheets="@styles.css" text="Purchase" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="#e4dddd" glyphName="CART_ARROW_DOWN" size="20" wrappingWidth="72.0" />
+         </graphic>
+      </JFXButton>
+      <JFXButton accessibleText="Material_five" layoutX="12.0" layoutY="170.0" prefHeight="86.0" prefWidth="196.0" ripplerFill="#1a4d41" styleClass="buttondrawer" stylesheets="@styles.css" text="Suppliers" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="15.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="#e4dddd" glyphName="SHOPPING_CART" size="20" wrappingWidth="84.0" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="drawInv" accessibleText="Material_three" layoutX="12.0" layoutY="123.0" prefHeight="80.0" prefWidth="198.0" ripplerFill="#1a4d41" styleClass="buttondrawer" stylesheets="@styles.css" text="My Profile" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="15.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="#e4dddd" glyphName="USER" size="20" wrappingWidth="84.0" />
+         </graphic>
+      </JFXButton>
+      <JFXButton accessibleText="Material_six" layoutX="12.0" layoutY="264.0" prefHeight="80.0" prefWidth="200.0" ripplerFill="#1a4d41" styleClass="buttondrawer" stylesheets="@styles.css" text="Help" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="19.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="#e4dddd" glyphName="QUESTION" size="20" wrappingWidth="84.0" />
+         </graphic>
+      </JFXButton>
+   </children>
+</VBox>

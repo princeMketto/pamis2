@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="391.0" prefWidth="260.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pams.view.ServerControl">
+   <children>
+      <HBox alignment="BOTTOM_LEFT" prefHeight="44.0" prefWidth="260.0" style="-fx-background-color: #2b89e0;">
+         <children>
+            <Label fx:id="fullnamelb" prefHeight="20.0" prefWidth="158.0" text="change ip/url address" textFill="#eeecec">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <JFXButton fx:id="btnsave" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="195.0" layoutY="19.0" onAction="#goSave" prefHeight="46.0" prefWidth="48.0" style="-fx-background-color: #19aecc;" styleClass="btnround" stylesheets="@styles.css" text="save" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="13.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+         <graphic>
+            <FontAwesomeIconView fill="#f5e2e2" glyphName="CHECK" size="22" />
+         </graphic>
+      </JFXButton>
+      <Label fx:id="fullnamelb1" layoutX="9.0" layoutY="339.0" prefHeight="20.0" prefWidth="243.0" text="make sure you are connected to the server." textFill="#9e2f2f">
+         <font>
+            <Font name="System Bold" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="fullnamelb11" layoutX="6.0" layoutY="351.0" prefHeight="20.0" prefWidth="243.0" text=" check all cable or network to server. " textFill="#9e2f2f">
+         <font>
+            <Font name="System Bold" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="fullnamelb111" layoutX="8.0" layoutY="365.0" prefHeight="20.0" prefWidth="243.0" text="if problem persist contac system/ database admin" textFill="#9e2f2f">
+         <font>
+            <Font name="System Bold" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelIp" layoutX="4.0" layoutY="109.0" prefHeight="20.0" prefWidth="253.0" textFill="#1ea86a">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="fullnamelb12" layoutX="15.0" layoutY="323.0" prefHeight="20.0" prefWidth="243.0" text="IF THE URL/DB DIDN'T WORK" textFill="#9e2f2f">
+         <font>
+            <Font name="System Bold" size="9.0" />
+         </font>
+      </Label>
+      <JFXToggleButton fx:id="dbmode" layoutX="90.0" layoutY="65.0" onAction="#Mode" text="Online Mode" textFill="#7224bc" toggleColor="#7224bc" unToggleColor="#2e66ab" unToggleLineColor="#83d5d7">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXToggleButton>
+      <Label layoutX="23.0" layoutY="85.0" text="Local Mode" textFill="#2e66ab">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="dbname" focusColor="#217a59" labelFloat="true" layoutX="43.0" layoutY="227.0" maxWidth="177.0" minWidth="177.0" prefHeight="31.0" prefWidth="177.0" promptText="Enter your database name" unFocusColor="#2abfb3">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="ip" focusColor="#217a59" labelFloat="true" layoutX="48.0" layoutY="184.0" maxWidth="177.0" minWidth="177.0" prefHeight="31.0" prefWidth="177.0" promptText="Enter server IP address" unFocusColor="#2abfb3">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <Separator layoutX="5.0" layoutY="311.0" prefHeight="4.0" prefWidth="253.0" />
+      <Separator layoutX="28.0" layoutY="136.0" prefWidth="200.0" />
+      <JFXPasswordField fx:id="dbpass" focusColor="#217a59" labelFloat="true" layoutX="43.0" layoutY="272.0" maxWidth="177.0" minWidth="177.0" prefHeight="31.0" prefWidth="177.0" promptText="Enter database password" unFocusColor="#2abfb3">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXPasswordField>
+      <Label fx:id="error" alignment="CENTER" layoutX="12.0" layoutY="142.0" prefHeight="20.0" prefWidth="243.0" textFill="#e4163c">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

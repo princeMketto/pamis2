@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="border" prefHeight="556.0" prefWidth="666.0" style="-fx-background-color: #2b89e0;" styleClass="body" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pams.view.SaleTrackControl">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="666.0" spacing="10.0" style="-fx-background-color: #2b89e0;">
+               <children>
+                  <JFXButton fx:id="btnBack" contentDisplay="GRAPHIC_ONLY" onAction="#goBack">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="30" />
+                     </graphic>
+                  </JFXButton>
+                  <Separator orientation="VERTICAL" prefHeight="33.0" prefWidth="3.0" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sales tracker">
+                     <font>
+                        <Font name="Century Gothic Bold" size="17.0" />
+                     </font>
+                  </Text>
+               </children>
+               <effect>
+                  <Reflection />
+               </effect>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="666.0" spacing="10.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <JFXDatePicker fx:id="startDate" defaultColor="#2b89e0" promptText="From" />
+                  <JFXDatePicker fx:id="endDate" defaultColor="#2b89e0" editable="false" promptText="to" />
+                  <JFXButton fx:id="btnsearch" contentDisplay="GRAPHIC_ONLY" layoutX="587.0" layoutY="13.0" onAction="#showInv" prefHeight="29.0" prefWidth="28.0" ripplerFill="#175668" styleClass="bar" text="show purchase" textFill="WHITE" underline="true">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#2c6810" glyphName="SEARCH" size="18" wrappingWidth="22.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXTextField fx:id="search" focusColor="#217275" labelFloat="true" maxWidth="217.0" minWidth="127.0" prefHeight="37.0" prefWidth="127.0" promptText="Search Item" unFocusColor="#238668">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton fx:id="btnPrint" contentDisplay="GRAPHIC_ONLY" layoutX="489.0" layoutY="14.0" onAction="#PrintInv" prefHeight="29.0" prefWidth="28.0" ripplerFill="#175668" styleClass="bar" text="show purchase" textFill="WHITE" underline="true">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#861a90" glyphName="PRINT" size="18" wrappingWidth="22.0" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <VBox prefHeight="513.0" prefWidth="45.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <VBox prefHeight="476.0" prefWidth="39.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <HBox prefHeight="2.0" prefWidth="681.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <StackPane fx:id="pane" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <bottom>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="597.0" BorderPane.alignment="CENTER_RIGHT">
+                     <BorderPane.margin>
+                        <Insets top="10.0" />
+                     </BorderPane.margin>
+                  </HBox>
+               </bottom>
+               <center>
+                  <TableView fx:id="tableview" prefHeight="453.0" prefWidth="597.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn fx:id="idcol" prefWidth="75.0" text="Receipt No" />
+                        <TableColumn fx:id="item" prefWidth="75.0" text="item" />
+                        <TableColumn fx:id="namecol" prefWidth="75.0" text="Sold by" />
+                        <TableColumn fx:id="datecol" prefWidth="75.0" text="Date" />
+                        <TableColumn fx:id="typcol" prefWidth="75.0" text="Sale type" />
+                        <TableColumn fx:id="qtyUsedCol" prefWidth="75.0" text="Qty" />
+                        <TableColumn fx:id="qtyRemcol" prefWidth="75.0" text="\@price" />
+                        <TableColumn fx:id="remakcol" prefWidth="75.0" text="amount" />
+                        <TableColumn fx:id="statcol" prefWidth="75.0" text="sold to" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </TableView>
+               </center>
+            </BorderPane>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>

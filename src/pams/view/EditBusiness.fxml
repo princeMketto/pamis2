@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchor" prefHeight="510.0" prefWidth="357.0" style="-fx-background-color: #2b89e0;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pams.view.EditOfficeInfoContr">
+   <children>
+      <JFXTextField fx:id="name" focusColor="#fdfdff" labelFloat="true" layoutX="92.0" layoutY="29.0" maxWidth="173.0" minWidth="173.0" prefHeight="43.0" prefWidth="173.0" promptText="BUSINESS NAME" styleClass="textfield1" stylesheets="@styles.css" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="address" focusColor="#fdfdff" labelFloat="true" layoutX="90.0" layoutY="85.0" maxWidth="173.0" minWidth="173.0" prefHeight="43.0" prefWidth="173.0" promptText="Address" styleClass="textfield1" stylesheets="@styles.css" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="web" focusColor="#fdfdff" labelFloat="true" layoutX="100.0" layoutY="320.0" maxWidth="173.0" minWidth="173.0" prefHeight="43.0" prefWidth="173.0" promptText="Phone 1" styleClass="textfield1" stylesheets="@styles.css" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="phone" focusColor="#fdfdff" labelFloat="true" layoutX="104.0" layoutY="376.0" maxWidth="173.0" minWidth="173.0" prefHeight="43.0" prefWidth="173.0" promptText="Phone 2" styleClass="textfield1" stylesheets="@styles.css" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="mail" focusColor="#fdfdff" labelFloat="true" layoutX="98.0" layoutY="203.0" maxWidth="173.0" minWidth="173.0" prefHeight="43.0" prefWidth="173.0" promptText="Email" styleClass="textfield1" stylesheets="@styles.css" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXTextField>
+      <JFXButton fx:id="btnsave" layoutX="114.0" layoutY="467.0" onAction="#submit" style="-fx-border-color: #ffffff;" styleClass="butex1" text="Save details">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="#191397" glyphName="CHECK" size="22" wrappingWidth="26.85714340209961" />
+         </graphic>
+      </JFXButton>
+      <FontAwesomeIconView fill="WHITE" glyphName="ENVELOPE_ALT" layoutX="64.0" layoutY="232.0" size="22" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PHONE" layoutX="65.0" layoutY="394.0" size="22" />
+      <FontAwesomeIconView fill="WHITE" glyphName="INDUSTRY" layoutX="3.0" layoutY="32.0" size="25" />
+      <FontAwesomeIconView fill="WHITE" glyphName="BUILDING" layoutX="63.0" layoutY="115.0" size="22" />
+      <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="64.0" layoutY="63.0" size="22" />
+      <FontAwesomeIconView fill="WHITE" glyphName="MOBILE" layoutX="65.0" layoutY="354.0" size="30" />
+      <ImageView fx:id="logo" fitHeight="56.0" fitWidth="90.0" layoutX="58.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXButton fx:id="btnlogo" layoutX="126.0" layoutY="423.0" onAction="#attachlogo" styleClass="butex1" text="Attach logo">
+         <graphic>
+            <FontAwesomeIconView fill="#f2d70c" glyphName="PAPERCLIP" size="22" />
+         </graphic>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="tin" focusColor="#fdfdff" labelFloat="true" layoutX="90.0" layoutY="143.0" maxWidth="173.0" minWidth="173.0" prefHeight="43.0" prefWidth="173.0" promptText="Tin No" styleClass="textfield1" stylesheets="@styles.css" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXTextField>
+      <FontAwesomeIconView fill="WHITE" glyphName="QRCODE" layoutX="63.0" layoutY="173.0" size="22" />
+      <FontAwesomeIconView fill="WHITE" glyphName="KEY" layoutX="63.0" layoutY="292.0" size="22" />
+      <JFXPasswordField fx:id="pass" focusColor="WHITE" labelFloat="true" layoutX="102.0" layoutY="261.0" maxWidth="173.0" minWidth="173.0" prefHeight="31.0" prefWidth="173.0" promptText="Email password" styleClass="textfield1" unFocusColor="WHITE" />
+   </children>
+</AnchorPane>

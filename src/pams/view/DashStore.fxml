@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="borderpane" style="-fx-background-color: #ffffff;" styleClass="body" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pams.view.DashStoreController">
+   <top>
+      <JFXToolbar prefHeight="39.0" prefWidth="800.0" style="-fx-background-color: #2b89e0;" BorderPane.alignment="CENTER">
+         <effect>
+            <DropShadow />
+         </effect>
+         <left>
+            <HBox prefHeight="42.0" prefWidth="294.0" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXHamburger fx:id="ham" styleClass="jfx-hamburger" stylesheets="@styles.css" />
+                  <Label prefHeight="68.0" prefWidth="176.0" text="p a m i s" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic Bold" size="18.0" />
+                     </font>
+                     <effect>
+                        <Reflection />
+                     </effect>
+                  </Label>
+               </children>
+            </HBox>
+         </left>
+         <right>
+            <HBox alignment="CENTER" prefHeight="32.0" prefWidth="329.0" spacing="15.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="btnAbout" onAction="#goAbout" styleClass="btnTop" stylesheets="@styles.css" text="About pamis">
+                     <graphic>
+                        <FontAwesomeIconView fill="#e7d1d1" glyphName="EXCLAMATION" size="18" />
+                     </graphic></JFXButton>
+                  <JFXButton fx:id="btnHelp" onAction="#goHelp" styleClass="btnTop" stylesheets="@styles.css" text="Help">
+                     <graphic>
+                        <FontAwesomeIconView fill="#e7d1d1" glyphName="INTERNET_EXPLORER" />
+                     </graphic></JFXButton>
+                  <JFXButton fx:id="btnFaq" layoutX="207.0" layoutY="13.0" onAction="#goFaq" styleClass="btnTop" stylesheets="@styles.css" text="FAQ">
+                     <graphic>
+                        <FontAwesomeIconView fill="#e7d1d1" glyphName="QUESTION_CIRCLE" size="18" />
+                     </graphic></JFXButton>
+                  <JFXButton fx:id="btnlogout" contentDisplay="CENTER" onAction="#logout" styleClass="btnTop" stylesheets="@styles.css" text="`">
+                     <graphic>
+                        <FontAwesomeIconView fill="#fcfcfc" glyphName="POWER_OFF" size="18" />
+                     </graphic></JFXButton>
+               </children>
+            </HBox>
+         </right>
+         <bottom>
+            <StackPane fx:id="stackMain" prefHeight="7.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
+         </bottom>
+      </JFXToolbar>
+   </top>
+   <left>
+      <JFXDrawer fx:id="drawer" defaultDrawerSize="200.0" maxWidth="200.0" prefHeight="556.0" prefWidth="3.0" BorderPane.alignment="CENTER" />
+   </left>
+   <bottom>
+      <HBox alignment="CENTER_RIGHT" prefHeight="28.0" prefWidth="800.0" style="-fx-background-color: #2b89e0;" BorderPane.alignment="CENTER">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="28.0" prefWidth="234.0">
+               <children>
+                  <Label fx:id="unam" alignment="CENTER_RIGHT" maxWidth="214.0" prefHeight="17.0" prefWidth="195.0" text="MWAKANYAMALE" textFill="#dfe0eb">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </HBox>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <StackPane fx:id="stackbase" BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane fx:id="borderpaneInner" prefHeight="200.0" prefWidth="200.0">
+               <left>
+                  <VBox prefHeight="330.0" prefWidth="30.0" BorderPane.alignment="CENTER" />
+               </left>
+               <right>
+                  <VBox prefHeight="330.0" prefWidth="29.0" BorderPane.alignment="CENTER" />
+               </right>
+               <top>
+                  <BorderPane prefHeight="273.0" prefWidth="797.0" BorderPane.alignment="CENTER">
+                     <right>
+                        <Pane prefHeight="200.0" prefWidth="268.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+                           <effect>
+                              <DropShadow height="29.9" radius="15.19" spread="0.05" width="32.86" />
+                           </effect>
+                           <BorderPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </BorderPane.margin>
+                           <children>
+                              <VBox alignment="CENTER" layoutX="-2.0" layoutY="63.0" prefHeight="185.0" prefWidth="270.0" spacing="10.0">
+                                 <children>
+                                    <AnchorPane prefHeight="185.0" prefWidth="239.0">
+                                       <children>
+                                          <Label layoutX="23.0" layoutY="12.0" opacity="0.21" text="Number of Sales:">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="23.0" layoutY="47.0" text="Number of Purchases:">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="22.0" layoutY="84.0" text="Number of products:">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="labsale" layoutX="194.0" layoutY="12.0" opacity="0.21" textFill="#2018ae">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="labpurch" layoutX="196.0" layoutY="47.0" textFill="#ab1697">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="labprod" layoutX="199.0" layoutY="85.0" text="0/-" textFill="#539016">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="21.0" layoutY="115.0" text="Product out of stock:">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="labstock" layoutX="199.0" layoutY="116.0" text="0/-" textFill="#da142f">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                              <HBox alignment="BOTTOM_LEFT" prefHeight="43.0" prefWidth="269.0" style="-fx-background-color: #F39C12;">
+                                 <children>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="CALENDAR" size="30" wrappingWidth="46.285715103149414">
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIconView>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Today:" wrappingWidth="52.0166015625">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Label fx:id="labD" textFill="#fcf3f3">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </Pane>
+                     </right>
+                     <center>
+                        <GridPane hgap="20.0" prefHeight="289.0" prefWidth="509.0" BorderPane.alignment="CENTER">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="112.0" prefWidth="269.0" spacing="30.0">
+                                       <children>
+                                          <Label fx:id="gdata" textFill="#0e6526">
+                                             <font>
+                                                <Font name="System Bold Italic" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="220.0" spacing="10.0" style="-fx-background-color: #ffffff;">
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                             <children>
+                                                <Pane prefHeight="112.0" prefWidth="100.0" style="-fx-background-color: #7794e4;">
+                                                   <children>
+                                                      <FontAwesomeIconView fill="#e4d5d5" glyphName="MONEY" layoutX="28.0" layoutY="68.0" size="40" />
+                                                   </children>
+                                                </Pane>
+                                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="37.0" prefWidth="100.0" text="Today's sales" textAlignment="CENTER" textFill="#304d9e">
+                                                         <font>
+                                                            <Font name="Franklin Gothic Demi Cond" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="labToS" layoutX="10.0" layoutY="10.0" prefHeight="56.0" prefWidth="100.0" textFill="#304d9e">
+                                                         <font>
+                                                            <Font name="Forte" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="50.0" layoutY="10.0" prefHeight="100.0" prefWidth="220.0" spacing="10.0" style="-fx-background-color: #ffffff;">
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                             <children>
+                                                <Pane prefHeight="112.0" prefWidth="100.0" style="-fx-background-color: #00695C;">
+                                                   <children>
+                                                      <FontAwesomeIconView fill="#e4d5d5" glyphName="MINUS_CIRCLE" layoutX="28.0" layoutY="68.0" size="40" />
+                                                   </children>
+                                                </Pane>
+                                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="37.0" prefWidth="100.0" text="Today's Expense" textAlignment="CENTER" textFill="#304d9e">
+                                                         <font>
+                                                            <Font name="Franklin Gothic Demi Cond" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="labToPu" layoutX="10.0" layoutY="10.0" prefHeight="56.0" prefWidth="100.0" textFill="#304d9e">
+                                                         <font>
+                                                            <Font name="Forte" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="175.0" layoutY="10.0" prefHeight="100.0" prefWidth="220.0" spacing="10.0" style="-fx-background-color: #ffffff;">
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                             <children>
+                                                <Pane prefHeight="112.0" prefWidth="100.0" style="-fx-background-color: #1B5E20;">
+                                                   <children>
+                                                      <FontAwesomeIconView fill="#e4d5d5" glyphName="SIGNAL" layoutX="28.0" layoutY="68.0" size="40" />
+                                                   </children>
+                                                </Pane>
+                                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" prefHeight="37.0" prefWidth="100.0" text="Mode" textAlignment="CENTER" textFill="#304d9e">
+                                                         <font>
+                                                            <Font name="Franklin Gothic Demi Cond" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="labMode" layoutX="10.0" layoutY="10.0" prefHeight="56.0" prefWidth="100.0" textFill="#304d9e">
+                                                         <font>
+                                                            <Font name="Forte" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                    <VBox prefHeight="119.0" prefWidth="269.0">
+                                       <children>
+                                          <HBox layoutX="10.0" layoutY="10.0" prefHeight="44.0" prefWidth="269.0" />
+                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="54.0" prefHeight="152.0" prefWidth="269.0" style="-fx-background-color: #ffffff;">
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                             <children>
+                                                <FontAwesomeIconView fill="#2766cd" glyphName="CLOCK_ALT" size="50" wrappingWidth="71.85714340209961" />
+                                                <Label fx:id="labWatch" textFill="#2766cd">
+                                                   <font>
+                                                      <Font name="Forte" size="27.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </GridPane>
+                     </center>
+                     <left>
+                        <AnchorPane opacity="0.63" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </BorderPane.margin>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <children>
+                              <HBox alignment="BOTTOM_LEFT" layoutX="-2.0" layoutY="-2.0" prefHeight="53.0" prefWidth="222.0" style="-fx-background-color: #00A65A;">
+                                 <children>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="MONEY" size="30" wrappingWidth="48.14285659790039" />
+                                    <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Smart Analyser">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <VBox layoutX="10.0" layoutY="127.0" prefHeight="63.0" prefWidth="200.0">
+                                 <children>
+                                    <Text fill="#4a4a4a" strokeType="OUTSIDE" strokeWidth="0.0" text="Purchases (Within 7 Days)">
+                                       <font>
+                                          <Font name="Roboto Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <ProgressBar fx:id="purchP" prefWidth="200.0" progress="0.0" styleClass="danger" />
+                                    <Label fx:id="labP" alignment="CENTER" prefHeight="19.0" prefWidth="104.0" textAlignment="RIGHT" textFill="#ae0f77">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="60.0" prefHeight="52.0" prefWidth="200.0">
+                                 <children>
+                                    <Text fill="#4a4a4a" strokeType="OUTSIDE" strokeWidth="0.0" text="Sales (within 7 Days)">
+                                       <font>
+                                          <Font name="Roboto Light" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <ProgressBar fx:id="saleP" prefWidth="200.0" progress="0.0" styleClass="success" />
+                                    <Label fx:id="labS" alignment="CENTER" prefHeight="19.0" prefWidth="104.0" textAlignment="RIGHT" textFill="#0f722e">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <Label fx:id="labSta" layoutX="4.0" layoutY="219.0" textFill="#1c41d3">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <FontAwesomeIconView fx:id="fntU" fill="#157c18" glyphName="THUMBS_ALT_UP" layoutX="60.0" layoutY="216.0" size="18" />
+                              <FontAwesomeIconView fx:id="fntD" fill="#7a1576" glyphName="THUMBS_ALT_DOWN" layoutX="150.0" layoutY="216.0" size="18" />
+                           </children>
+                        </AnchorPane>
+                     </left>
+                  </BorderPane>
+               </top>
+               <center>
+                  <StackPane fx:id="stackPop" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <top>
+                              <GridPane alignment="CENTER" prefHeight="105.0" prefWidth="738.0" BorderPane.alignment="CENTER">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <JFXButton fx:id="btnSale" buttonType="RAISED" contentDisplay="TOP" opacity="0.37" prefHeight="78.0" prefWidth="235.0" styleClass="btnDash" stylesheets="@styles.css" text="Sales" textFill="#511a84">
+                                       <font>
+                                          <Font name="Century Gothic Bold" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow height="40.28" radius="19.64" spread="0.28" width="40.28" />
+                                       </effect>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="#2b89e0" glyphName="CART_ARROW_DOWN" size="35" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton fx:id="btnprod" buttonType="RAISED" contentDisplay="TOP" layoutX="10.0" layoutY="19.0" onAction="#goProduct" prefHeight="78.0" prefWidth="235.0" styleClass="btnDash" stylesheets="@styles.css" text="Products" textFill="#511a84" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font name="Century Gothic Bold" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow height="40.28" radius="19.64" spread="0.28" width="40.28" />
+                                       </effect>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="#2b89e0" glyphName="INDUSTRY" size="35" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton fx:id="btnStore" buttonType="RAISED" contentDisplay="TOP" layoutX="10.0" layoutY="113.0" onAction="#goStore" prefHeight="78.0" prefWidth="235.0" styleClass="btnDash" stylesheets="@styles.css" text="Store" textFill="#511a84" GridPane.columnIndex="2">
+                                       <font>
+                                          <Font name="Century Gothic Bold" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow height="40.28" radius="19.64" spread="0.28" width="40.28" />
+                                       </effect>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="#2b89e0" glyphName="SHOPPING_BAG" size="35" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton fx:id="btnManage" buttonType="RAISED" contentDisplay="TOP" opacity="0.37" prefHeight="78.0" prefWidth="235.0" styleClass="btnDash" stylesheets="@styles.css" text="Management" textFill="#511a84" GridPane.columnIndex="3">
+                                       <font>
+                                          <Font name="Century Gothic Bold" size="18.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow height="40.28" radius="19.64" spread="0.28" width="40.28" />
+                                       </effect>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="#2b89e0" glyphName="COGS" size="35" />
+                                       </graphic>
+                                    </JFXButton>
+                                 </children>
+                              </GridPane>
+                           </top>
+                           <center>
+                              <GridPane BorderPane.alignment="CENTER">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefHeight="139.0" prefWidth="222.0" style="-fx-background-color: #00A65A;">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="216.0">
+                                             <children>
+                                                <Pane prefHeight="43.0" prefWidth="45.0" style="-fx-background-color: #00A65A;">
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                   <children>
+                                                      <FontAwesomeIconView fill="WHITE" glyphName="HOSPITAL_ALT" layoutX="8.0" layoutY="30.0" size="30" />
+                                                   </children>
+                                                </Pane>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="20.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <JFXButton fx:id="btnmed" opacity="0.37" prefHeight="43.0" prefWidth="225.0" styleClass="btnM" text="Medical services" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#f8f5f5" glyphName="MEDKIT" size="20" wrappingWidth="65.0" />
+                                             </graphic>
+                                          </JFXButton>
+                                          <JFXButton fx:id="btndoc" layoutX="10.0" layoutY="65.0" opacity="0.37" prefHeight="42.0" prefWidth="225.0" styleClass="btnM" text="Doctors" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <graphic>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="USER_MD" size="20" wrappingWidth="122.0" />
+                                             </graphic>
+                                          </JFXButton>
+                                          <JFXButton fx:id="btninterv" layoutX="10.0" layoutY="82.0" opacity="0.37" prefHeight="43.0" prefWidth="225.0" styleClass="btnM" text="Intervention" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#fcfafa" glyphName="STETHOSCOPE" size="20" wrappingWidth="94.0" />
+                                             </graphic>
+                                          </JFXButton>
+                                          <JFXButton fx:id="btnpatient" layoutX="11.0" layoutY="130.0" opacity="0.37" prefHeight="43.0" prefWidth="225.0" styleClass="btnM" text="Patient" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <graphic>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="WHEELCHAIR" size="20" wrappingWidth="128.0" />
+                                             </graphic>
+                                          </JFXButton>
+                                       </children>
+                                       <GridPane.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </GridPane.margin>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" prefHeight="139.0" prefWidth="222.0" spacing="15.0" style="-fx-background-color: #64b5d3;" GridPane.columnIndex="1">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="206.0">
+                                             <children>
+                                                <Pane prefHeight="43.0" prefWidth="45.0" style="-fx-background-color: #64b5d3;">
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                   <children>
+                                                      <FontAwesomeIconView fill="WHITE" glyphName="BARCODE" layoutX="8.0" layoutY="29.0" size="30" wrappingWidth="30.0" />
+                                                   </children>
+                                                </Pane>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="20.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <JFXButton fx:id="btnPurchase" onAction="#goPurchase" prefHeight="43.0" prefWidth="225.0" styleClass="btnM" text="Purchases" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <graphic>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="CREDIT_CARD" size="20" wrappingWidth="86.0" />
+                                             </graphic>
+                                          </JFXButton>
+                                          <JFXButton fx:id="btnInventory" layoutX="10.0" layoutY="65.0" onAction="#goInvent" prefHeight="42.0" prefWidth="225.0" styleClass="btnM" text="Inventory" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#fff3f3" glyphName="ARCHIVE" size="20" wrappingWidth="90.0" />
+                                             </graphic>
+                                          </JFXButton>
+                                          <JFXButton fx:id="btnsupp" layoutX="11.0" layoutY="87.0" onAction="#goSupplier" prefHeight="42.0" prefWidth="225.0" styleClass="btnM" text="Supplier" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#fff3f3" glyphName="SHOPPING_CART" size="20" wrappingWidth="90.0" />
+                                             </graphic>
+                                          </JFXButton>
+                                          <JFXButton fx:id="btnwage" layoutX="10.0" layoutY="82.0" onAction="#goExpense" prefHeight="43.0" prefWidth="225.0" styleClass="btnM" text="Other Expenses" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <graphic>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="OPENCART" size="20" wrappingWidth="57.0" />
+                                             </graphic>
+                                          </JFXButton>
+                                       </children>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                       <GridPane.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </GridPane.margin>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="256.0" layoutY="10.0" prefHeight="139.0" prefWidth="222.0" spacing="15.0" style="-fx-background-color: #F39C12;" GridPane.columnIndex="2">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="216.0">
+                                             <children>
+                                                <Pane prefHeight="43.0" prefWidth="45.0" style="-fx-background-color: #F39C12;">
+                                                   <effect>
+                                                      <DropShadow />
+                                                   </effect>
+                                                   <children>
+                                                      <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="8.0" layoutY="30.0" size="30" />
+                                                   </children>
+                                                </Pane>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="108.0">
+                                                   <children>
+                                                      <JFXButton fx:id="btnEd" onAction="#goProfile" text="Edit" textFill="WHITE" underline="true">
+                                                         <graphic>
+                                                            <FontAwesomeIconView fill="#fff9f9" glyphName="PENCIL" size="25" />
+                                                         </graphic>
+                                                         <font>
+                                                            <Font name="System Bold Italic" size="14.0" />
+                                                         </font>
+                                                      </JFXButton>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="20.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <Label fx:id="fulnam" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#f1eeee" glyphName="HEART" size="20" wrappingWidth="80.0" />
+                                             </graphic>
+                                          </Label>
+                                          <Label fx:id="fulmail" layoutX="24.0" layoutY="60.0" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#f1eeee" glyphName="ENVELOPE" size="20" wrappingWidth="48.0" />
+                                             </graphic>
+                                          </Label>
+                                          <Label fx:id="fulphone" layoutX="24.0" layoutY="80.0" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#f1eeee" glyphName="PHONE" size="20" wrappingWidth="103.0" />
+                                             </graphic>
+                                          </Label>
+                                          <Label fx:id="fulstat" layoutX="51.0" layoutY="100.0" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <graphic>
+                                                <FontAwesomeIconView fill="#f1eeee" glyphName="USER_SECRET" size="20" wrappingWidth="137.0" />
+                                             </graphic>
+                                          </Label>
+                                       </children>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                       <GridPane.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </GridPane.margin>
+                                    </VBox>
+                                 </children>
+                              </GridPane>
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </StackPane>
+               </center>
+            </BorderPane>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>

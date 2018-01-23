@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXBadge?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<BorderPane prefHeight="556.0" prefWidth="666.0" styleClass="body" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pams.view.ReceiptController">
+   <top>
+      <VBox alignment="CENTER" prefHeight="33.0" prefWidth="666.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: #2b89e0;">
+               <children>
+                  <JFXBadge prefHeight="32.0" prefWidth="10.0" />
+                  <JFXButton fx:id="btnBackSale" contentDisplay="GRAPHIC_ONLY" onAction="#goBack">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="30" />
+                     </graphic>
+                  </JFXButton>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Label prefHeight="32.0" prefWidth="63.0" text="Receipt" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <Reflection />
+               </effect>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <WebView fx:id="webcontent" prefHeight="316.0" prefWidth="519.0" styleClass="body" stylesheets="@styles.css">
+               <effect>
+                  <DropShadow />
+               </effect></WebView>
+            <ButtonBar prefHeight="40.0" prefWidth="200.0">
+               <buttons>
+                  <Label fx:id="printlabel" prefHeight="19.0" prefWidth="141.0" textFill="#0f6b0f">
+                     <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="btnPrint" buttonType="RAISED" onAction="#printReceipt" prefHeight="49.0" ripplerFill="#362286" styleClass="butex1" text="Print" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#ebd7d7" glyphName="PRINT" size="28" />
+                     </graphic>
+                  </JFXButton>
+               </buttons>
+            </ButtonBar>
+         </children>
+      </VBox>
+   </center>
+   <left>
+      <Pane prefHeight="444.0" prefWidth="77.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <Pane prefHeight="444.0" prefWidth="70.0" BorderPane.alignment="CENTER" />
+   </right>
+   <effect>
+      <InnerShadow />
+   </effect>
+</BorderPane>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="reportPane" prefHeight="556.0" prefWidth="666.0" styleClass="body" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pams.view.ReportController">
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <HBox alignment="CENTER" prefHeight="44.0" prefWidth="666.0" spacing="5.0" style="-fx-background-color: #2b89e0;" BorderPane.alignment="CENTER">
+               <children>
+                  <ChoiceBox fx:id="length" prefHeight="29.0" prefWidth="122.0" styleClass="butex1" />
+                  <Text fill="#f2fffe" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="From">
+                     <font>
+                        <Font name="Century Gothic Bold" size="17.0" />
+                     </font>
+                  </Text>
+                  <JFXDatePicker fx:id="startDate" defaultColor="#712080" promptText="Start reporting Date" styleClass="textfield1" />
+                  <Text fill="#f2fffe" fontSmoothingType="LCD" layoutX="220.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to">
+                     <font>
+                        <Font name="Century Gothic Bold" size="17.0" />
+                     </font>
+                  </Text>
+                  <JFXDatePicker fx:id="endDate" defaultColor="#692080" editable="false" layoutX="263.0" layoutY="17.0" promptText="End Reporting Date" styleClass="textfield1" stylesheets="@styles.css" />
+                  <JFXButton fx:id="btnShow" buttonType="RAISED" onAction="#fetchGraph" ripplerFill="#175668" styleClass="butex1" text="show report" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </HBox>
+         </top>
+         <left>
+            <VBox prefHeight="405.0" prefWidth="34.0" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <VBox prefHeight="405.0" prefWidth="44.0" BorderPane.alignment="CENTER" />
+         </right>
+         <bottom>
+            <HBox alignment="TOP_RIGHT" prefHeight="42.0" prefWidth="666.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="btnprintgraph" buttonType="RAISED" onAction="#printGraph" prefHeight="29.0" prefWidth="159.0" ripplerFill="#175668" styleClass="butex1" text="Print Graph" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#e3f2eb" glyphName="PRINT" size="22" wrappingWidth="26.571428298950195" />
+                     </graphic>
+                  </JFXButton>
+                  <Label prefHeight="17.0" prefWidth="55.0" />
+               </children></HBox>
+         </bottom>
+         <center>
+            <BarChart fx:id="graph" title="SALES GRAPH" BorderPane.alignment="CENTER">
+              <xAxis>
+                <CategoryAxis animated="false" label="Time" side="BOTTOM" tickLabelFill="#0e4a94" tickLabelRotation="20.0">
+                     <tickLabelFont>
+                        <Font name="System Bold" size="9.0" />
+                     </tickLabelFont></CategoryAxis>
+              </xAxis>
+              <yAxis>
+                <NumberAxis label="Amount of Money" side="LEFT" tickLabelFill="#104497">
+                     <tickLabelFont>
+                        <Font name="System Bold" size="11.0" />
+                     </tickLabelFont></NumberAxis>
+              </yAxis>
+            </BarChart>
+         </center>
+      </BorderPane>
+   </center>
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="666.0" style="-fx-background-color: #2b89e0;" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="btnBack" contentDisplay="GRAPHIC_ONLY" onAction="#goBack">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="30" />
+               </graphic>
+            </JFXButton>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <Label text="Graph Reports" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox prefHeight="31.0" prefWidth="666.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="17.0" prefWidth="37.0" />
+            <JFXButton fx:id="btnsaletable" buttonType="RAISED" onAction="#fetchTable" ripplerFill="#175668" styleClass="butex1" text="Detailed sale in a table mode" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#f9fcfb" glyphName="TABLE" size="22" />
+               </graphic>
+            </JFXButton>
+         </children></HBox>
+   </bottom>
+</BorderPane>

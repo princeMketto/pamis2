@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="510.0" prefWidth="434.0" style="-fx-background-color: #2b89e0;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pams.view.ProfileController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="7.0" layoutY="10.0" prefHeight="503.0" prefWidth="427.0" spacing="15.0">
+         <children>
+            <HBox alignment="BOTTOM_CENTER" />
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="141.0" prefHeight="29.0" prefWidth="427.0" spacing="30.0">
+               <children>
+                  <Text fill="#ebeaea" strokeType="OUTSIDE" strokeWidth="0.0" text="personal details">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="2.0" prefWidth="427.0">
+               <children>
+                  <FontAwesomeIconView fill="#ebd0d0" glyphName="USER" size="20" />
+                  <JFXTextField fx:id="lbfname" focusColor="WHITE" labelFloat="true" prefHeight="5.0" prefWidth="193.0" promptText="first name" styleClass="textfield1" unFocusColor="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="lblname" focusColor="WHITE" labelFloat="true" prefHeight="7.0" prefWidth="193.0" promptText="lastname" styleClass="textfield1" unFocusColor="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <FontAwesomeIconView fill="#ebd0d0" glyphName="PHONE" size="20" />
+                  <JFXTextField fx:id="lbphone" focusColor="WHITE" labelFloat="true" prefHeight="3.0" prefWidth="193.0" promptText="Phone" styleClass="textfield1" unFocusColor="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXTextField>
+                  <FontAwesomeIconView fill="#ebd0d0" glyphName="ENVELOPE" size="20" />
+                  <JFXTextField fx:id="lbmail" focusColor="WHITE" labelFloat="true" promptText="Email" styleClass="textfield1" unFocusColor="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="29.0" prefWidth="427.0" spacing="30.0">
+               <children>
+                  <JFXButton fx:id="btnphoto" buttonType="RAISED" onAction="#detailsInfo" styleClass="butex1" stylesheets="@styles.css" text="Update details" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" style="-fx-background-color: #009688;" />
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="25.0" prefHeight="29.0" prefWidth="427.0" spacing="30.0">
+               <children>
+                  <Text fill="#ebeaea" strokeType="OUTSIDE" strokeWidth="0.0" text="password settings">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="69.0" prefHeight="2.0" prefWidth="427.0">
+               <children>
+                  <FontAwesomeIconView fill="#ebd0d0" glyphName="KEY" size="20" />
+                  <JFXPasswordField fx:id="lboldpass" focusColor="WHITE" labelFloat="true" maxWidth="186.0" minWidth="186.0" prefHeight="31.0" prefWidth="186.0" promptText="Enter old password" styleClass="textfield1" unFocusColor="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <JFXPasswordField fx:id="lbnewpass" focusColor="WHITE" labelFloat="true" layoutX="141.0" layoutY="10.0" maxWidth="186.0" minWidth="186.0" prefHeight="31.0" prefWidth="186.0" promptText="new password" styleClass="textfield1" unFocusColor="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXPasswordField>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="291.0" prefHeight="2.0" prefWidth="427.0">
+               <children>
+                  <JFXPasswordField fx:id="lbconfirm" focusColor="WHITE" labelFloat="true" maxWidth="210.0" minWidth="186.0" prefHeight="43.0" prefWidth="210.0" promptText="confirm password" styleClass="textfield1" unFocusColor="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXPasswordField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="185.0" prefHeight="29.0" prefWidth="427.0" spacing="30.0">
+               <children>
+                  <JFXButton fx:id="btnPass" buttonType="RAISED" onAction="#updatePassword" styleClass="butex1" stylesheets="@styles.css" text="change password" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <Separator layoutX="10.0" layoutY="229.0" prefWidth="200.0" style="-fx-background-color: #009688;" />
+            <HBox alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="349.0" prefHeight="2.0" prefWidth="427.0">
+               <children>
+                  <JFXTextField fx:id="lbusername" focusColor="WHITE" labelFloat="true" maxWidth="293.0" minWidth="293.0" prefHeight="43.0" prefWidth="293.0" promptText="secret word(for password recovery)" styleClass="textfield1" unFocusColor="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="407.0" prefHeight="29.0" prefWidth="427.0" spacing="30.0">
+               <children>
+                  <JFXButton fx:id="goBtn" buttonType="RAISED" onAction="#usernameInfo" styleClass="butex1" stylesheets="@styles.css" text="update  word" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <JFXButton fx:id="fullnamelb" contentDisplay="GRAPHIC_ONLY" layoutX="387.0" layoutY="7.0" onAction="#fill" prefHeight="34.0" prefWidth="40.0" style="-fx-background-color: #dd7e24;" styleClass="btnDash" textFill="#dd7e24">
+         <graphic>
+            <FontAwesomeIconView fill="#fce9e9" glyphName="PENCIL" size="18" />
+         </graphic>
+         <effect>
+            <DropShadow />
+         </effect>
+      </JFXButton>
+      <JFXButton fx:id="whatbtn" contentDisplay="GRAPHIC_ONLY" layoutX="377.0" layoutY="499.0" onAction="#goHint" prefHeight="27.0" prefWidth="32.0" style="-fx-background-color: #dd7e24;" styleClass="btnDash" textFill="#dd7e24">
+         <graphic>
+            <FontAwesomeIconView fill="#fce9e9" glyphName="EXCLAMATION" size="18" />
+         </graphic>
+         <effect>
+            <DropShadow />
+         </effect>
+      </JFXButton>
+   </children>
+</AnchorPane>

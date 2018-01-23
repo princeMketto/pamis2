@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="border" prefHeight="556.0" prefWidth="666.0" style="-fx-background-color: #2b89e0;" styleClass="body" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pams.view.MyInvContr">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="666.0" spacing="10.0" style="-fx-background-color: #2b89e0;">
+               <children>
+                  <JFXButton fx:id="btnBack" contentDisplay="GRAPHIC_ONLY" onAction="#goBack">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="30" />
+                     </graphic>
+                  </JFXButton>
+                  <Separator orientation="VERTICAL" prefHeight="33.0" prefWidth="3.0" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Item inventory">
+                     <font>
+                        <Font name="Century Gothic Bold" size="17.0" />
+                     </font>
+                  </Text>
+               </children>
+               <effect>
+                  <Reflection />
+               </effect>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="666.0" spacing="10.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <JFXDatePicker fx:id="startDate" defaultColor="#2b89e0" promptText="From" />
+                  <JFXDatePicker fx:id="endDate" defaultColor="#2b89e0" editable="false" promptText="to" />
+                  <JFXButton fx:id="btnShow" contentDisplay="GRAPHIC_ONLY" onAction="#showInv" prefHeight="29.0" prefWidth="28.0" ripplerFill="#175668" styleClass="bar" text="show purchase" textFill="WHITE" underline="true">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#1e8d43" glyphName="LIST" size="18" wrappingWidth="22.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXTextField fx:id="search" focusColor="#217275" labelFloat="true" maxWidth="217.0" minWidth="127.0" prefHeight="37.0" prefWidth="127.0" promptText="Search Item" unFocusColor="#238668">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton fx:id="btnPrint" contentDisplay="GRAPHIC_ONLY" layoutX="489.0" layoutY="14.0" onAction="#PrintInv" prefHeight="29.0" prefWidth="28.0" ripplerFill="#175668" styleClass="bar" text="show purchase" textFill="WHITE" underline="true">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#861a90" glyphName="PRINT" size="18" wrappingWidth="22.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btnAdjust" layoutX="449.0" layoutY="14.0" onAction="#openAdjust" prefHeight="29.0" ripplerFill="#175668" styleClass="bar" text="Loss/Adjustment" textFill="#1a8c50">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#831e3e" glyphName="FEED" size="18" wrappingWidth="22.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btnPrice" layoutX="590.0" layoutY="14.0" onAction="#openPrice" prefHeight="29.0" ripplerFill="#175668" styleClass="bar" text="Price List" textFill="#1a8c50">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#2e1e82" glyphName="MONEY" size="18" wrappingWidth="22.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btnProfoma" layoutX="614.0" layoutY="14.0" onAction="#openProfoma" prefHeight="29.0" ripplerFill="#175668" styleClass="bar" text="Load saved proforma" textFill="#1a8c50">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#2c0e46" glyphName="HOURGLASS_HALF" size="18" wrappingWidth="22.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btnPayed" contentDisplay="GRAPHIC_ONLY" layoutX="255.0" layoutY="14.0" onAction="#openPayedProfoma" prefHeight="29.0" prefWidth="28.0" ripplerFill="#175668" styleClass="bar" text="show purchase" textFill="WHITE" underline="true">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#8c551f" glyphName="CREDIT_CARD" size="18" wrappingWidth="22.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btnOrder" layoutX="190.0" layoutY="14.0" onAction="#showOrder" prefHeight="29.0" prefWidth="118.0" ripplerFill="#175668" styleClass="bar" text="auto order" textFill="#cd17ca">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#bf23bd" glyphName="MAGIC" size="18" wrappingWidth="22.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btnAuto" contentDisplay="GRAPHIC_ONLY" layoutX="154.0" layoutY="14.0" onAction="#showAuto" prefHeight="29.0" prefWidth="28.0" ripplerFill="#175668" styleClass="bar" text="show purchase" textFill="WHITE" underline="true">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#da1818" glyphName="SLIDERS" size="18" wrappingWidth="22.0" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <VBox prefHeight="513.0" prefWidth="45.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <VBox prefHeight="476.0" prefWidth="39.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <HBox prefHeight="2.0" prefWidth="681.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <StackPane fx:id="pane" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <bottom>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="597.0" BorderPane.alignment="CENTER_RIGHT">
+                     <BorderPane.margin>
+                        <Insets top="10.0" />
+                     </BorderPane.margin>
+                  </HBox>
+               </bottom>
+               <center>
+                  <TableView fx:id="tableview" prefHeight="453.0" prefWidth="597.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn fx:id="idcol" prefWidth="75.0" text="Item ID" />
+                        <TableColumn fx:id="namecol" prefWidth="75.0" text="Item Name" />
+                        <TableColumn fx:id="datecol" prefWidth="75.0" text="Arrival" />
+                        <TableColumn fx:id="qtycol" prefWidth="75.0" text="Qty" />
+                        <TableColumn fx:id="qtyUsedCol" prefWidth="75.0" text="Qty issued" />
+                        <TableColumn fx:id="qtyRemcol" prefWidth="75.0" text="Qty remain" />
+                        <TableColumn fx:id="remakcol" prefWidth="75.0" text="Remark" />
+                        <TableColumn fx:id="statcol" prefWidth="75.0" text="Status" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </TableView>
+               </center>
+            </BorderPane>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>

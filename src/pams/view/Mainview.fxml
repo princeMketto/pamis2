@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #2b89e0;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pams.view.LoginController">
+   <opaqueInsets>
+      <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+   </opaqueInsets>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;?import javafx.geometry.Insets?&gt;&lt;?import javafx.scene.control.Label?&gt;&lt;?import javafx.scene.layout.HBox?&gt;&lt;?import javafx.scene.layout.VBox?&gt;&lt;?import javafx.scene.text.Font?&gt;&lt;HBox prefHeight=&quot;58.0&quot; prefWidth=&quot;800.0&quot; xmlns=&quot;http://javafx.com/javafx/8.0.111&quot; xmlns:fx=&quot;http://javafx.com/fxml/1&quot;&gt;   &lt;children&gt;      &lt;VBox prefHeight=&quot;58.0&quot; prefWidth=&quot;285.0&quot;&gt;         &lt;children&gt;            &lt;Label alignment=&quot;BOTTOM_LEFT&quot; contentDisplay=&quot;CENTER&quot; prefHeight=&quot;30.0&quot; prefWidth=&quot;521.0&quot; text=&quot;uzalishajiApp &quot; textFill=&quot;#461f8c&quot;&gt;               &lt;font&gt;                  &lt;Font name=&quot;Bodoni MT Bold&quot; size=&quot;24.0&quot; /&gt;               &lt;/font&gt;               &lt;VBox.margin&gt;                  &lt;Insets left=&quot;10.0&quot; /&gt;               &lt;/VBox.margin&gt;            &lt;/Label&gt;            &lt;Label alignment=&quot;CENTER&quot; contentDisplay=&quot;CENTER&quot; prefHeight=&quot;30.0&quot; prefWidth=&quot;521.0&quot; text=&quot;v 10.0.0.1&quot; textFill=&quot;WHITE&quot;&gt;               &lt;font&gt;                  &lt;Font name=&quot;Bodoni MT Bold&quot; size=&quot;15.0&quot; /&gt;               &lt;/font&gt;               &lt;padding&gt;                  &lt;Insets left=&quot;50.0&quot; /&gt;               &lt;/padding&gt;            &lt;/Label&gt;         &lt;/children&gt;      &lt;/VBox&gt;   &lt;/children&gt;&lt;/HBox&gt;;" BorderPane.alignment="CENTER">
+         <children>
+            <Separator prefHeight="6.0" prefWidth="279.0" />
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <StackPane fx:id="stackPop" BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <left>
+                  <Pane prefHeight="200.0" prefWidth="271.0" BorderPane.alignment="CENTER" />
+               </left>
+               <right>
+                  <Pane prefHeight="200.0" prefWidth="227.0" BorderPane.alignment="CENTER" />
+               </right>
+               <bottom>
+                  <Pane prefHeight="74.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
+               </bottom>
+               <center>
+                  <Pane maxHeight="300.0" maxWidth="300.0" minHeight="200.0" minWidth="200.0" prefHeight="265.0" prefWidth="300.0" style="-fx-background-color: #ffffff; -fx-border-radius: 10 10 10 10;" styleClass="logpane" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+                     <opaqueInsets>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </opaqueInsets>
+                     <children>
+                        <VBox alignment="CENTER" layoutX="15.0" layoutY="12.0" prefHeight="233.0" prefWidth="277.0" spacing="8.0" style="-fx-background-color: #ffffff;">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="18.0" prefWidth="107.0" text="sign in" textFill="#185763">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefWidth="200.0" />
+                              <JFXTextField fx:id="usname" focusColor="#1e5741" labelFloat="true" maxWidth="243.0" minWidth="243.0" prefHeight="31.0" prefWidth="243.0" promptText="Username" unFocusColor="#51b280">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="12.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXPasswordField fx:id="password" focusColor="#184d3a" labelFloat="true" maxWidth="238.0" minWidth="238.0" prefHeight="31.0" prefWidth="238.0" promptText="password" unFocusColor="#56bc8e">
+                                 <font>
+                                    <Font name="Century Gothic" size="14.0" />
+                                 </font>
+                              </JFXPasswordField>
+                              <Label fx:id="errorlab" textFill="#c32020">
+                                 <font>
+                                    <Font name="Times New Roman Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefWidth="200.0" />
+                              <HBox alignment="CENTER" prefHeight="52.0" prefWidth="277.0">
+                                 <children>
+                                    <JFXButton fx:id="logbtn" buttonType="RAISED" graphicTextGap="1.0" onAction="#gologin" prefHeight="48.0" prefWidth="232.0" ripplerFill="WHITE" styleClass="butex" stylesheets="@styles.css" text="submit" textFill="WHITE">
+                                       <font>
+                                          <Font name="Century Gothic Bold" size="18.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="#102e94" glyphName="SIGN_IN" size="30" wrappingWidth="33.428571701049805" />
+                                       </graphic>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <JFXButton fx:id="serv" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="254.0" layoutY="251.0" onAction="#config" prefHeight="30.0" prefWidth="33.0" style="-fx-background-color: #19aecc;" styleClass="btnround" stylesheets="@styles.css" textFill="WHITE">
+                           <font>
+                              <Font name="Century Gothic Bold" size="14.0" />
+                           </font>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <graphic>
+                              <FontAwesomeIconView fill="#e7d1d1" glyphName="COG" size="16" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="forgot" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="251.0" onAction="#onForget" prefHeight="30.0" prefWidth="33.0" style="-fx-background-color: #19aecc;" styleClass="btnround" stylesheets="@styles.css" textFill="WHITE">
+                           <font>
+                              <Font name="Century Gothic Bold" size="14.0" />
+                           </font>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <graphic>
+                              <FontAwesomeIconView fill="#e7d1d1" glyphName="LOCK" size="20" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="btnReq" alignment="CENTER" layoutX="65.0" layoutY="254.0" onAction="#goReq" styleClass="btnReg" stylesheets="@styles.css" text="No account?, create one Here" textFill="#3173b2" underline="true">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                     <effect>
+                        <DropShadow height="68.44" radius="28.5325" spread="0.23" width="47.69" />
+                     </effect>
+                  </Pane>
+               </center>
+               <top>
+                  <HBox prefHeight="71.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox prefHeight="58.0" prefWidth="800.0">
+                           <children>
+                              <VBox alignment="BOTTOM_LEFT" prefHeight="71.0" prefWidth="334.0">
+                                 <children>
+                                    <Label alignment="BOTTOM_LEFT" contentDisplay="CENTER" prefHeight="30.0" prefWidth="521.0" text="P a m i s" textFill="#ebf5f1">
+                                       <font>
+                                          <Font name="Bodoni MT Bold" size="64.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label alignment="TOP_LEFT" prefHeight="30.0" prefWidth="521.0" text="pharmacy auto management &amp; inventory system" textFill="WHITE">
+                                       <font>
+                                          <Font name="Bodoni MT Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="TOP_RIGHT" prefHeight="34.0" prefWidth="800.0" spacing="15.0">
+                           <children>
+                              <JFXButton fx:id="btnAbout" onAction="#goAbout" styleClass="btnTop" stylesheets="@styles.css" text="About PAMIS">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#e7d1d1" glyphName="EXCLAMATION" size="18" />
+                                 </graphic></JFXButton>
+                              <JFXButton fx:id="btnHelp" layoutX="384.0" layoutY="27.0" onAction="#goHelp" styleClass="btnTop" stylesheets="@styles.css" text="Help">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#e7d1d1" glyphName="INTERNET_EXPLORER" />
+                                 </graphic></JFXButton>
+                              <JFXButton fx:id="btnFaq" layoutX="418.0" layoutY="27.0" onAction="#goFaq" styleClass="btnTop" stylesheets="@styles.css" text="FAQ">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#e7d1d1" glyphName="QUESTION_CIRCLE" size="18" />
+                                 </graphic></JFXButton>
+                              <JFXButton layoutX="635.0" layoutY="27.0" styleClass="btnTop" stylesheets="@styles.css" text="Feedback">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#e7d1d1" glyphName="COMMENTS_ALT" size="18" />
+                                 </graphic></JFXButton>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </HBox>
+                     </children></HBox>
+               </top>
+            </BorderPane>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>

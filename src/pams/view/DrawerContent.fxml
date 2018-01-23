@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="610.0" prefWidth="200.0" style="-fx-background-color: #2b89e0;" styleClass="drawer" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pams.view.DrawerController">
+   <children>
+      <ImageView fitHeight="177.0" fitWidth="198.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/pamis0.png" />
+         </image>
+         <effect>
+            <Reflection />
+         </effect>
+      </ImageView>
+      <JFXButton fx:id="drawrepo" accessibleText="Material_one" graphicTextGap="8.0" prefHeight="77.0" prefWidth="190.0" ripplerFill="#1a4d41" styleClass="buttondrawer" stylesheets="@styles.css" text="P O S" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="#fff7d8" glyphName="SHOPPING_CART" size="20" wrappingWidth="83.0" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="drawreg" accessibleText="Material_two" graphicTextGap="8.0" layoutX="12.0" layoutY="123.0" prefHeight="81.0" prefWidth="200.0" ripplerFill="#1a4d41" styleClass="buttondrawer" stylesheets="@styles.css" text="Products" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="#fff7d8" glyphName="INDUSTRY" size="20" wrappingWidth="57.0" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="drawres1" accessibleText="Material_three" graphicTextGap="8.0" layoutX="11.0" layoutY="345.0" prefHeight="80.0" prefWidth="198.0" ripplerFill="#1a4d41" styleClass="buttondrawer" stylesheets="@styles.css" text="Inventory" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="#fff7d8" glyphName="CUBES" size="20" wrappingWidth="62.0" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="drawres" accessibleText="Material_four" graphicTextGap="8.0" layoutX="12.0" layoutY="123.0" prefHeight="80.0" prefWidth="198.0" ripplerFill="#1a4d41" styleClass="buttondrawer" stylesheets="@styles.css" text="Store" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="#fff7d8" glyphName="SHOPPING_BAG" size="20" wrappingWidth="83.0" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="drawinfo" accessibleText="Material_five" graphicTextGap="8.0" layoutX="11.0" layoutY="279.0" prefHeight="80.0" prefWidth="198.0" ripplerFill="#1a4d41" styleClass="buttondrawer" stylesheets="@styles.css" text="vendor" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="#fff7d8" glyphName="COGS" size="20" wrappingWidth="72.0" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="drawlogout" accessibleText="Material_six" graphicTextGap="8.0" layoutX="12.0" layoutY="264.0" prefHeight="80.0" prefWidth="200.0" ripplerFill="#1a4d41" styleClass="buttondrawer" stylesheets="@styles.css" text="logout" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="#fff7d8" glyphName="SIGN_OUT" size="20" wrappingWidth="74.0" />
+         </graphic>
+      </JFXButton>
+   </children>
+   <effect>
+      <DropShadow height="0.0" radius="9.94" spread="0.23" width="41.76" />
+   </effect>
+</VBox>

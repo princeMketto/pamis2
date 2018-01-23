@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="556.0" style="-fx-background-color: #ffffff;" stylesheets="@../../../../uzalishajiApp/src/iPack/view/styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pams.view.ProdAdminController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="688.0" style="-fx-background-color: #2b89e0;" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="btnBack" contentDisplay="GRAPHIC_ONLY" onAction="#goBack">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="30" />
+               </graphic>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </JFXButton>
+            <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="6.0" />
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Products">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <right>
+      <VBox alignment="TOP_CENTER" prefHeight="431.0" prefWidth="221.0" spacing="30.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <Pane prefHeight="143.0" prefWidth="221.0" style="-fx-background-color: #2F4E7F;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <Text fill="#eeecec" layoutX="17.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="search product" textAlignment="CENTER" wrappingWidth="174.13671875">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <JFXTextField fx:id="search" focusColor="#fbfcff" labelFloat="true" layoutY="40.0" maxWidth="220.0" minWidth="189.0" prefHeight="43.0" prefWidth="220.0" promptText="product hint" styleClass="textfield1" stylesheets="@styles.css" unFocusColor="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton fx:id="refresh" layoutX="148.0" layoutY="83.0" onAction="#fetchProduct" style="-fx-background-color: #30c8ba;" text="Refresh" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <AnchorPane prefHeight="98.0" prefWidth="222.0" style="-fx-background-color: #ffffff;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <JFXButton fx:id="btnRequest" layoutX="4.0" layoutY="1.0" onAction="#showMost" prefHeight="72.0" prefWidth="213.0" text="Most used products" textFill="#0a5b21">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#0f6519" glyphName="REPLY_ALL" size="22" wrappingWidth="34.0" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <JFXButton fx:id="ModBtn" onAction="#modifyProd" opacity="0.0" prefHeight="74.0" prefWidth="219.0" style="-fx-background-color: #16669B;" text="Add in stock" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="MODX" size="22" wrappingWidth="31.0" />
+               </graphic>
+            </JFXButton>
+            <Pane fx:id="se" layoutX="10.0" layoutY="242.0" prefHeight="116.0" prefWidth="221.0" style="-fx-background-color: #2F4E7F;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <GridPane prefHeight="79.0" prefWidth="213.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="170.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.0" minWidth="10.0" prefWidth="43.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Safe Items" textFill="#fffbfb">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="Items near Expiration(3 month)" textFill="WHITE" GridPane.rowIndex="1" />
+                        <Label text="Expired Items" textFill="WHITE" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="#bf0505" glyphName="TACHOMETER" size="18" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <FontAwesomeIconView fill="#e7f631" glyphName="TACHOMETER" size="18" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <FontAwesomeIconView fill="#c4d69f" glyphName="TACHOMETER" size="18" text="" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </right>
+   <bottom>
+      <HBox alignment="CENTER" opacity="0.0" prefHeight="73.0" prefWidth="688.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="addProdBtn" onAction="#addProduct" styleClass="butex" stylesheets="@styles.css" text="Register new">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#191397" glyphName="PLUS_CIRCLE" size="22" wrappingWidth="26.85714340209961" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="updateBtn" layoutX="335.0" layoutY="33.0" onAction="#updateProd" styleClass="butex" stylesheets="@styles.css" text="Edit product">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#0b6b15" glyphName="PENCIL" size="22" wrappingWidth="24.285714149475098" />
+               </graphic>
+            </JFXButton>
+            <StackPane fx:id="StackDel">
+               <children>
+                  <JFXButton fx:id="btnDelete" onAction="#removProd" styleClass="butex" stylesheets="@styles.css" text="Delete product">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#c90c12" glyphName="TRASH" size="22" wrappingWidth="26.0" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </StackPane>
+            <VBox alignment="TOP_CENTER" opacity="0.0">
+               <children>
+                  <Text fx:id="tx" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Unakubali kufuta kifaa hiki?">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="tx1" fill="WHITE" layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unakubali kufuta kifaa hiki?">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <JFXButton fx:id="btn00" text="NDIYO" textFill="#ee0a0a">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btn0" text="HAPANA" textFill="#fcf015">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <StackPane fx:id="pane" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <TableView fx:id="tableProd" prefHeight="200.0" prefWidth="200.0" stylesheets="@styles.css" tableMenuButtonVisible="true">
+               <columns>
+                  <TableColumn fx:id="idCol" prefWidth="75.0" text="Id" />
+                  <TableColumn fx:id="nameCol" prefWidth="75.0" text="Product Name" />
+                  <TableColumn fx:id="genname" prefWidth="75.0" text="Generic Name" />
+                  <TableColumn fx:id="descrCol" prefWidth="75.0" text="Description" />
+                  <TableColumn fx:id="suppCol" prefWidth="75.0" text="Supplier" />
+                  <TableColumn fx:id="recCol" prefWidth="75.0" text="Received Date" />
+                  <TableColumn fx:id="exCol" prefWidth="75.0" text="ExpireDate" />
+                  <TableColumn fx:id="orCol" prefWidth="75.0" text="Orig. price" />
+                  <TableColumn fx:id="cellCol" prefWidth="75.0" text="Cell price" />
+                  <TableColumn fx:id="cell1Col" prefWidth="75.0" text="Whol. sale" />
+                  <TableColumn fx:id="qtyCol1" prefWidth="75.0" text="Qty">
+                     <columns>
+                        <TableColumn fx:id="qtyCol" prefWidth="75.0" text="Tot" />
+                        <TableColumn fx:id="qtyLeftCol" prefWidth="75.0" text=" left" />
+                     </columns>
+                  </TableColumn>
+                  <TableColumn fx:id="prof" prefWidth="75.0" text="Profit" />
+                  <TableColumn fx:id="totalCol" prefWidth="75.0" text="Total money" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </TableView>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>

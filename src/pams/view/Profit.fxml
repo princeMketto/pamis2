@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="682.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pams.view.ProfitController">
+   <children>
+      <VBox prefHeight="534.0" prefWidth="682.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <HBox prefHeight="39.0" prefWidth="682.0" style="-fx-background-color: #2b89e0;">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="140.0" spacing="15.0" styleClass="userinfo" stylesheets="@styles.css">
+                     <children>
+                        <Text fill="#f5f0e2" strokeType="OUTSIDE" strokeWidth="0.0" text="profit calculator" textAlignment="CENTER">
+                           <font>
+                              <Font name="Century Gothic Bold" size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <HBox alignment="BOTTOM_CENTER" prefHeight="70.0" prefWidth="433.0">
+                     <children>
+                        <ChoiceBox fx:id="length" prefHeight="25.0" prefWidth="128.0" style="-fx-background-color: #19aecc;" />
+                        <JFXDatePicker fx:id="startDate" defaultColor="#19aecc" editable="false" prefHeight="43.0" prefWidth="160.0" promptText="start date" style="-fx-background-color: #ffffff;" styleClass="textfield" stylesheets="@styles.css" />
+                        <JFXDatePicker fx:id="endDate" defaultColor="#19aecc" editable="false" prefHeight="43.0" prefWidth="135.0" promptText="end date" style="-fx-background-color: #ffffff;" styleClass="textfield" stylesheets="@styles.css" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="221.0" prefWidth="682.0">
+               <children>
+                  <AreaChart fx:id="graph1" prefHeight="258.0" prefWidth="624.0" title="General profit graph">
+                    <xAxis>
+                      <CategoryAxis endMargin="0.0" label="time" startMargin="0.0" tickLabelFill="#225e97" tickLabelRotation="-37.0" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis label="Profit(Tsh)" side="LEFT" />
+                    </yAxis>
+                  </AreaChart>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="97.0" prefHeight="24.0" prefWidth="682.0">
+               <children>
+                  <Text fill="#4c5cb5" strokeType="OUTSIDE" strokeWidth="0.0" text="Net Profit(Total profit - other expenses):" textAlignment="CENTER">
+                     <font>
+                        <Font name="Century Gothic Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="netpro" fill="#2940cf" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
+                     <font>
+                        <Font name="Century Gothic Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#1e750e" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.47802734375">
+                     <font>
+                        <Font name="Times New Roman Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="profit" fill="#1e750e" layoutX="501.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font name="Times New Roman Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="loss" fill="#b51a1a" layoutX="520.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font name="Times New Roman Bold" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="97.0" prefHeight="271.0" prefWidth="682.0">
+               <children>
+                  <BarChart fx:id="graph" prefHeight="232.0" prefWidth="593.0">
+                    <xAxis>
+                      <CategoryAxis endMargin="0.0" label="time" side="BOTTOM" startMargin="0.0" tickLabelFill="#225e97" tickLabelRotation="-42.7">
+                           <tickLabelFont>
+                              <Font name="Century Gothic Bold" size="8.0" />
+                           </tickLabelFont>
+                        </CategoryAxis>
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis label="profit" side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <JFXButton fx:id="goBtn" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="599.0" layoutY="17.0" onAction="#fill" prefHeight="39.0" prefWidth="41.0" style="-fx-background-color: #F39C12;" styleClass="btnround" stylesheets="@styles.css" text="Go" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="CHECK" size="22" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="hintbtn" buttonType="RAISED" layoutX="606.0" layoutY="500.0" style="-fx-background-color: #19aecc;" styleClass="btnround" stylesheets="@styles.css" text="?" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </JFXButton>
+   </children>
+</AnchorPane>

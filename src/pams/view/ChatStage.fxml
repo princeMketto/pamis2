@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane styleClass="body" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pams.view.ChatController">
+   <top>
+      <HBox prefHeight="42.0" prefWidth="666.0" BorderPane.alignment="CENTER">
+         <effect>
+            <Reflection />
+         </effect>
+         <children>
+            <JFXButton fx:id="btnBack" buttonType="RAISED" onAction="#goBack" ripplerFill="#175668" style="-fx-background-color: #30c8ba;" stylesheets="@styles.css" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <Separator orientation="VERTICAL" prefHeight="28.0" prefWidth="9.0" />
+            <Label text="Send Note">
+               <font>
+                  <Font name="Century Gothic Bold" size="27.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox prefHeight="33.0" prefWidth="666.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </top>
+         <bottom>
+            <HBox prefHeight="54.0" prefWidth="666.0" BorderPane.alignment="CENTER" />
+         </bottom>
+         <center>
+            <TableView fx:id="tableview" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="messcol" editable="false" prefWidth="107.0" text="Message" />
+                  <TableColumn fx:id="sendcol" editable="false" prefWidth="60.0" text="sender" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </center>
+         <left>
+            <VBox maxHeight="450.0" maxWidth="400.0" minHeight="327.0" minWidth="210.0" prefHeight="327.0" prefWidth="311.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Message Content" textFill="#6b295e">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" />
+                  <Text fx:id="textv" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="253.291015625">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Separator prefWidth="200.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="123.13671875" />
+                  <Separator prefWidth="200.0" />
+                  <JFXTextArea fx:id="notes" focusColor="#4f176b" labelFloat="true" maxWidth="309.0" minWidth="309.0" prefHeight="122.0" prefWidth="309.0" promptText="write your text here" style="-fx-background-color: #D6DDD2;" unFocusColor="#338c90">
+                     <font>
+                        <Font name="Century Gothic Bold" size="20.0" />
+                     </font>
+                  </JFXTextArea>
+                  <HBox alignment="CENTER" prefHeight="39.0" prefWidth="301.0">
+                     <children>
+                        <JFXCheckBox fx:id="adm" checkedColor="#8224b5" text="Admin" textFill="#34878c" unCheckedColor="#34878c">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXCheckBox>
+                        <JFXCheckBox fx:id="stor" layoutX="10.0" layoutY="10.0" text="Store" textFill="#34878c" unCheckedColor="#34878c">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXCheckBox>
+                        <JFXCheckBox fx:id="cash" checkedColor="#8224b5" layoutX="125.0" layoutY="10.0" text="Cashier" textFill="#34878c" unCheckedColor="#34878c">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXCheckBox>
+                     </children>
+                  </HBox>
+                  <JFXButton fx:id="btnsend" buttonType="RAISED" onAction="#sendNote" ripplerFill="#175668" style="-fx-background-color: #30c8ba;" text="send" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></JFXButton>
+               </children>
+            </VBox>
+         </left>
+         <right>
+            <VBox prefHeight="327.0" prefWidth="37.0" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+   </center>
+   <right>
+      <VBox prefHeight="481.0" prefWidth="83.0" BorderPane.alignment="CENTER" />
+   </right>
+   <left>
+      <VBox prefHeight="481.0" prefWidth="66.0" BorderPane.alignment="CENTER" />
+   </left>
+</BorderPane>

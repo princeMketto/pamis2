@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="271.0" prefWidth="260.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pams.view.ForgotCont">
+   <children>
+      <HBox alignment="BOTTOM_LEFT" prefHeight="44.0" prefWidth="260.0" style="-fx-background-color: #2b89e0;">
+         <children>
+            <Label fx:id="fullnamelb" prefHeight="20.0" prefWidth="158.0" text="password recovery" textFill="#eeecec">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <JFXButton fx:id="btnsave" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="193.0" layoutY="19.0" onAction="#goSave" prefHeight="46.0" prefWidth="48.0" style="-fx-background-color: #19aecc;" styleClass="btnround" stylesheets="@styles.css" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="13.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+         <graphic>
+            <FontAwesomeIconView fill="#eee1e1" glyphName="REFRESH" size="22" />
+         </graphic>
+      </JFXButton>
+      <Label fx:id="fullnamelb1" layoutX="9.0" layoutY="207.0" prefHeight="20.0" prefWidth="243.0" text="make sure to enter correct recovery word" textFill="#9e2f2f">
+         <font>
+            <Font name="System Bold" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="fullnamelb11" layoutX="6.0" layoutY="221.0" prefHeight="20.0" prefWidth="243.0" text="check if you enter corret username" textFill="#9e2f2f">
+         <font>
+            <Font name="System Bold" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="fullnamelb111" layoutX="8.0" layoutY="236.0" prefHeight="20.0" prefWidth="243.0" text="if problem persist contac system/ database admin" textFill="#9e2f2f">
+         <font>
+            <Font name="System Bold" size="9.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="word" focusColor="#217a59" labelFloat="true" layoutX="37.0" layoutY="151.0" maxWidth="177.0" minWidth="177.0" prefHeight="31.0" prefWidth="177.0" promptText="Enter your recovery word " unFocusColor="#2abfb3">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+      <Label fx:id="labelIp" layoutX="10.0" layoutY="73.0" prefHeight="20.0" prefWidth="236.0" textFill="#1ea86a">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="fullnamelb12" layoutX="15.0" layoutY="195.0" prefHeight="20.0" prefWidth="243.0" text="IF YOU CANT GET YOUR PASSWORD" textFill="#9e2f2f">
+         <font>
+            <Font name="System Bold" size="9.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="id" focusColor="#217a59" labelFloat="true" layoutX="41.0" layoutY="112.0" maxWidth="177.0" minWidth="177.0" prefHeight="31.0" prefWidth="177.0" promptText="Enter your ID" unFocusColor="#2abfb3">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXTextField>
+   </children>
+</AnchorPane>
